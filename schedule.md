@@ -13,11 +13,11 @@
 | **Mar 14** | Spring Break| Clean Up & Document |
 | **Mar 21** | 9	     | Writeup + reevaluate |
 | **Mar 28** | 10	     |  |
-| **Apr 4 ** | 11	     |  |
+| **Apr 4**  | 11	     |  |
 | **Apr 11** | 12	     |  |
-| **Apr 4 ** | 13	     | Design Physical Space and the User Interaction for that Setting |
-| **Apr 4 ** | 14	     | Practice Presentations + Design Space Interactions|
-| **May 2 ** | 15	     | Final Presentations + Prep Physical showcase for Exhibtion |
-| **May 5 ** | Exhibition| Install + Document some of the Interactions |
+| **Apr 4**  | 13	     | Design Physical Space and the User Interaction for that Setting |
+| **Apr 4**  | 14	     | Practice Presentations + Design Space Interactions|
+| **May 2**  | 15	     | Final Presentations + Prep Physical showcase for Exhibtion |
+| **May 5**  | Exhibition| Install + Document some of the Interactions |
 | **May 15** | ...		 | Final Documentation Due  |
 
