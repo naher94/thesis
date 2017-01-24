@@ -9,7 +9,8 @@
 | **Feb 14** | 5	     |  |
 | **Feb 21** | 6	     |  |
 | **Feb 28** | 7	     |  |
-| **Mar 14** | 8	     |  |
+| **Mar 7**  | 8	     |  |
+| **Mar 14** | Spring Break|  |
 | **Mar 21** | 9	     |  |
 | **Mar 28** | 10	     |  |
 | **Apr 4 ** | 11	     |  |
@@ -18,5 +19,5 @@
 | **Apr 4 ** | 14	     |  |
 | **May 2 ** | 15	     |  |
 | **May 5 ** | Exhibition|  |
-| **May 15** | Final Documentation Due|  |
+| **May 15** | ...		 | Final Documentation Due  |
 
