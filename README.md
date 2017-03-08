@@ -3,4 +3,4 @@
 
 ## how to run the app
 
-`DEBUG=thesis:* nodemon npm start`
+`DEBUG=thesis:* nodemon npm start`  
