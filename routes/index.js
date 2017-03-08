@@ -12,11 +12,12 @@ router.get('/', function (req, res, next) {
   };
   alchemy_language.keywords(parameters, function (err, response) {
     if (err) console.log('error:', err);
-    else console.log(JSON.stringify(response, null, 2));
+    else{ res.render('index', {
+    title: 'Conversational Design',
+    data: JSON.stringify(response, null, 2)
+  });}
+//    else console.log(JSON.stringify(response, null, 2));
   });
-  
-  res.render('index', {
-    title: 'Conversational Design'
-  });
+
 });
 module.exports = router;
