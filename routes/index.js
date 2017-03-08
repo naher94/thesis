@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
     api_key: 'API_KEY'
   })
   var parameters = {
-    url: 'http://www.twitter.com/ibmwatson'
+    url: 'https://www.nytimes.com/2017/03/07/technology/uber-travis-kalanick.html?rref=collection%2Fsectioncollection%2Ftechnology&action=click&contentCollection=technology&region=rank&module=package&version=highlights&contentPlacement=1&pgtype=sectionfront'
   };
   alchemy_language.keywords(parameters, function (err, response) {
     if (err) console.log('error:', err);
