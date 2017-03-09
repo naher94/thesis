@@ -15,7 +15,8 @@ router.get('/', function (req, res, next) {
   alchemy_language.keywords(parameters, function (err, response) {
     if (err) console.log('error:', err);
     else {
-      res.render('index', {title: 'Conversational Design', data: JSON.stringify(response, null, 2)});
+      var parsedData = JSON.parse(response);
+      res.render('index', {title: 'Conversational Design', data: JSON.stringify(response, null, 2), text: JSON.stringify(response.keywords)});
     }
 //    else console.log(JSON.stringify(response, null, 2));
   });
