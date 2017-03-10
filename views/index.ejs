@@ -1,25 +1,29 @@
+<style>
+  .key{
+    background-color: yellow;
+  }
+</style>
+
+
 <h1> <%= title %> </h1>
 
 <% raw = JSON.parse(data) %>
 <% keywords = JSON.parse(sharedWords) %>
 
-<div style="display: inline-block; float: left">
   <h2>First Article</h2>
   <ul>
     <% for (i in raw[0].keywords) { %>
       <li><%= raw[0].keywords[i].text.toLowerCase() %> | <strong>relevance</strong>: <%= raw[0].keywords[i].relevance %> | <%= raw[0].keywords[i].sentiment.type %></li>
     <% } %>
   </ul>
-</div>
 
-<div style="display: inline-block; float: right">
-  <h2>Second Article</h2>
-  <ul>
-    <% for (i in raw[1].keywords) { %>
-      <li><%= raw[1].keywords[i].text.toLowerCase() %> | <strong>relevance</strong>: <%= raw[1].keywords[i].relevance %> | <%= raw[1].keywords[i].sentiment.type %></li>
-    <% } %>
-  </ul>
-</div>
+
+<h2>Second Article</h2>
+<ul>
+  <% for (i in raw[1].keywords) { %>
+    <li><%= raw[1].keywords[i].text.toLowerCase() %> | <strong>relevance</strong>: <%= raw[1].keywords[i].relevance %> | <%= raw[1].keywords[i].sentiment.type %></li>
+  <% } %>
+</ul>
 
 <h2>Shared Keywords</h2>
   <ul>
@@ -27,5 +31,7 @@
       <li><%= keywords[i].text.toLowerCase() %> | <strong>relevance</strong>: <%= keywords[i].relevance %> | <%= keywords[i].sentiment.type %></li>
     <% } %>
   </ul>
+
+<%- highlighted %>
 
 

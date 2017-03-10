@@ -21,6 +21,17 @@ var concat = function (convo, referance) {
   return newData;
 }
 
+var merge = function (text, keywords){
+  //var newText = "";
+  text = text.toLowerCase();
+  console.log(keywords);
+  for(i=0; i < keywords.length; i++){
+    var global = new RegExp(keywords[i].text.toLowerCase(), 'g');
+    text = text.replace(global, "<span class='key'>"+keywords[i].text+"</span>");
+  }
+  return text;
+}
+
 router.get('/', function (req, res, next) {
 
   var calls = [];
@@ -48,9 +59,9 @@ router.get('/', function (req, res, next) {
   async.parallel(calls, function(err, result) {
     //console.log(JSON.stringify(result[0].keywords[0].text));
     var similarKeywords = concat(result[0], result[1]);
-    //console.log(result);
-    //res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result) })
-    res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result), sharedWords: JSON.stringify(similarKeywords) })
+    var highlighted = merge(result[0].text,similarKeywords);
+    console.log(highlighted);
+    res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result), sharedWords: JSON.stringify(similarKeywords), highlighted: highlighted })
   });
 
 });
