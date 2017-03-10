@@ -27,7 +27,15 @@ var merge = function (text, keywords){
   console.log(keywords);
   for(i=0; i < keywords.length; i++){
     var global = new RegExp(keywords[i].text.toLowerCase(), 'g');
-    text = text.replace(global, "<span class='key'>"+keywords[i].text+"</span>");
+    if(keywords[i].sentiment.type == 'neutral'){
+      text = text.replace(global, "<span class='key neutral'>"+keywords[i].text+"</span>");
+    }
+    else if(keywords[i].sentiment.type == 'positive'){
+      text = text.replace(global, "<span class='key positive'>"+keywords[i].text+"</span>");
+    }
+    else{
+    text = text.replace(global, "<span class='key negative'>"+keywords[i].text+"</span>");
+      }
   }
   return text;
 }
