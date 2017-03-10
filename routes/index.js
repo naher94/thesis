@@ -9,13 +9,15 @@ var alchemy_language = watson.alchemy_language({
 
 var concat = function (convo, referance) {
   var newData = [];
-  for (i = 0; i < convo.length; i++) {
-    for (j = 0; j < referance.length; j++) {
-      if (convo[i].text == referance[j].text) {
-        newData.push(referance[j]);
+  for (i = 0; i < convo.keywords.length; i++) {
+    for (j = 0; j < referance.keywords.length; j++) {
+      if (convo.keywords[i].text.toLowerCase() == referance.keywords[j].text.toLowerCase()) {
+        newData.push(referance.keywords[j]);
+//        console.log(JSON.stringify(referance.keywords[j]));
       }
     }
   }
+  //console.log(JSON.stringify(newData));
   return newData;
 }
 
@@ -44,9 +46,11 @@ router.get('/', function (req, res, next) {
   )});
 
   async.parallel(calls, function(err, result) {
-//    concat(result[0], result[1]);
-    console.log(result);
-    res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result) })
+    //console.log(JSON.stringify(result[0].keywords[0].text));
+    var similarKeywords = concat(result[0], result[1]);
+    //console.log(result);
+    //res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result) })
+    res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result), sharedWords: JSON.stringify(similarKeywords) })
   });
 
 });
