@@ -30,8 +30,9 @@ router.get('/', function (req, res, next) {
   };
 
   var parameters1 = {
-    url: 'https://www.wired.com/2016/02/the-inside-story-behind-ubers-colorful-redesign/'
+    url: 'http://www.vanityfair.com/news/2014/12/uber-travis-kalanick-controversy'
     , showSourceText: 1
+    , sentiment: 1
   };
 
   [parameters, parameters1].forEach(function(param) {
@@ -43,7 +44,9 @@ router.get('/', function (req, res, next) {
   )});
 
   async.parallel(calls, function(err, result) {
-    res.render('index', { title: "TEST", data: JSON.stringify(concat(result[0], result[1])) })
+//    concat(result[0], result[1]);
+    console.log(result);
+    res.render('index', { title: "Comparing Two Article's Keywords", data: JSON.stringify(result) })
   });
 
 });
